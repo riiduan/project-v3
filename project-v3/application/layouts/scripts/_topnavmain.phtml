@@ -1,0 +1,49 @@
+<ul>
+	<li class="current_page_item"><a href="
+											<?= $this->url(array(
+													'controller' => 'public',
+													'action' => 'index'),
+													'default',true
+												);
+											?>" title="Torna alla home">Home</a></li>
+	<li><a href="
+                <?= $this->url(array(
+                        'controller' => 'public',
+                        'action'     => 'viewstatic',
+                        'staticPage' => 'who'), 
+                        'default',true
+                    ); 
+                 ?>" title="Il nostro profilo">Chi siamo</a></li>
+	<li><a href="
+                <?= $this->url(array(
+                        'controller' => 'public',
+                        'action'     => 'viewstatic',
+                        'staticPage' => 'servizi'), 
+                        'default',true
+                    ); 
+                 ?>" title="I nostri servizi">Servizi</a></li>
+	<li><a href="
+                <?= $this->url(array(
+                        'controller' => 'faq',
+                        'action'     => 'index',
+                        'staticPage' => 'faq'), 
+                        'default',true
+                    ); 
+                 ?>" title="Domande frequenti">FAQ</a></li>
+	<li><a href= "mailto: info@emergencies.com" title="Mandaci un messaggio">Contattaci</a></li>
+
+    <li><a href="
+                <?= $this->url(array(
+                        'controller' => 'public',
+                        'action'     => 'login'), 
+                        'default',true
+                    );
+                 ?>" title="Accedi al sito">Login</a></li>
+    <li><a href="
+                <?= $this->url(array(
+            'controller' => 'public',
+            'action'     => 'logout'),
+            'default',true
+        );
+        ?>" title="Esci dal sito">Logout</a></li>
+</ul>

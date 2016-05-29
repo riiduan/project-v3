@@ -1,0 +1,33 @@
+<?php echo $this->doctype() ?>
+<html>
+<head>
+	<?= $this->headMeta(); ?>
+    <?= $this->headLink(); ?>
+    <?= $this->headTitle(); ?>
+</head>
+<body>
+<div id="wrapper">
+	<div id="header-wrapper">
+		<div id="header" class="container">
+			<div id="logo">
+				<h1><a href="<?= $this->url(array(
+							 					'controller' => 'public',
+												'action' => 'index'),
+												'default',true
+										);
+							?>">emergencies</a></h1>
+			</div>
+		</div>
+		<div id="menu" class="container">
+			<?= $this->render('_topnavmain.phtml') ?>
+		</div>
+	</div>
+	<div id="page">
+		<?php echo $this->layout()->content; ?> 
+	</div>
+</div>
+<div id="footer">
+	<p><b>&copy; Progetto di Tecnologie Web 2015/2016</b></p>
+</div>
+</body>
+</html>

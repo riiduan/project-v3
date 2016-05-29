@@ -1,0 +1,33 @@
+<?php $this->headScript()
+    ->appendFile('https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
+    ->appendFile($this->baseUrl('js/functions.js'))
+    ->captureStart() ?>
+
+// codice jQuery inserito da view-script nella sezione head della pagina
+$(function()
+{
+var actionUrl='<? echo $this->url(array('controller' => 'public', 'action' => 'validatelogin',), 'default'); ?>';
+var formName='<?php echo $this->loginForm->getName() ?>';
+$(":input").on('blur', function(event) {
+var formElementId = $(this).attr('id');
+doValidation(formElementId, actionUrl, formName);
+});
+});
+
+<?php $this->headScript()->captureEnd() ?>
+
+<center>
+    <div>
+        <h2>Login</h2>
+        <p>Inserisci username e password per accedere al sito</p>
+        <?=$this->loginForm; ?>
+        <br>
+        <p>Non sei registrato? <a href="
+                <?= $this->url(array(
+                'controller' => 'public',
+                'action'     => 'registrazione'),
+                'default',true
+            );
+            ?>"<b>Registrati!</b></a></p>
+    </div>
+</center>
